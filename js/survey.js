@@ -41,7 +41,7 @@ $(function () {
 
       var addRadioButton = document.createElement("button");
       addRadioButton.type = "button";
-      addRadioButton.className = "btn btn-primary";
+      addRadioButton.className = "btn btn-primary radioButton";
       addRadioButton.textContent = "+";
       addRadioButton.id = "addRadioButton";
 
@@ -58,7 +58,7 @@ $(function () {
       well.append(divForButton);
       divForButton.appendChild(addRadioButton);
 
- $('#addRadioButton').click(function () {
+ $('.radioButton').click(function () {
 
 
       var divforInputRadio = document.createElement("div");
