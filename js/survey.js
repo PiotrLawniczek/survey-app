@@ -4,6 +4,9 @@ $(function () {
       var counterForAdd = 0;
 
   $(document).ready(function () {
+
+
+
     $('#add').click(function () {
 
       var titleText = $('#inputSurveyName').val();
@@ -15,9 +18,6 @@ $(function () {
       well.className = "well";
       well.id = "well"+counterForWell;
       counterForWell = counterForWell + 1;
-
-      var surveyTitle = document.createElement("h3");
-      surveyTitle.textContent = titleText;
 
       var inputQuestionLabel = document.createElement("label");
       inputQuestionLabel.className = "control-label";
@@ -40,6 +40,8 @@ $(function () {
       var inputRadio = document.createElement("input");
       inputRadio.type = "radio";
       inputRadio.id = "inputRadio";
+     // $("#inputRadio").attr("disabled", true);
+     inputRadio.name= "optradio";
 
 
       var addRadioButton = document.createElement("button");
@@ -63,7 +65,6 @@ $(function () {
 
       survey.append(formGroup);
       formGroup.append(well);
-      well.append(surveyTitle);
       well.append(inputQuestionLabel);
       well.append(inputQuestion);
 
