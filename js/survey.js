@@ -1,6 +1,7 @@
 
 $(function () {                                   
-
+      var counterForWell = 0;
+      var counterForAdd = 0;
 
   $(document).ready(function () {
     $('#add').click(function () {
@@ -12,6 +13,8 @@ $(function () {
 
       var well = document.createElement("div");
       well.className = "well";
+      well.id = "well"+counterForWell;
+      counterForWell = counterForWell + 1;
 
       var surveyTitle = document.createElement("h3");
       surveyTitle.textContent = titleText;
@@ -43,7 +46,8 @@ $(function () {
       addRadioButton.type = "button";
       addRadioButton.className = "btn btn-primary radioButton";
       addRadioButton.textContent = "+";
-      addRadioButton.id = "addRadioButton";
+      addRadioButton.id = "addRadioButton"+counterForAdd;
+      counterForAdd = counterForAdd +1;
 
       var divForButton = document.createElement("div");
 
@@ -58,24 +62,13 @@ $(function () {
       well.append(divForButton);
       divForButton.appendChild(addRadioButton);
 
- $('.radioButton').click(function () {
+ $(addRadioButton).click(function (e) {
+  
+   var wellGood = $(e.target).parent().parent().attr('id');
 
+   element = document.getElementById(wellGood);
 
-      var divforInputRadio = document.createElement("div");
-
-      var inputRadioLabel = document.createElement("input");
-      inputRadioLabel.setAttribute("for", inputRadio);
-      inputRadioLabel.textContent = "asdasd";
-
-
-
-      var inputRadio = document.createElement("input");
-      inputRadio.type = "radio";
-      inputRadio.id = "inputRadio";
-
-      well.appendChild(divforInputRadio);
-      divforInputRadio.appendChild(inputRadio);
-      divforInputRadio.appendChild(inputRadioLabel);
+   $("#inputRadio").clone().appendTo(element);
 
 
     });
