@@ -5,6 +5,40 @@ $(function () {
 
   $(document).ready(function () {
 
+//  var arr = { name: "testtest" };
+// $.ajax({
+//     url: 'http://localhost:8080/users',
+//     async: true,
+//     type: 'POST',
+//     data: { "name" : "testtest" },
+//     contentType: 'application/json;charset=utf-8",',
+//     dataType: 'json',
+//     success: function(msg) {
+//         alert(msg);
+//     }
+// });
+
+
+
+
+
+//  var txt = "razraz";
+//     $.post("http://localhost:8080/surveys", {"title": "ankieta5567999"}  , function(result){
+//         alert(result);
+//     } );
+
+//     $.get("http://localhost:8080/surveys", function(data, status){
+//         alert("Data: " + data + "\nStatus: " + status);
+//     });
+
+    var txt = "razraz";
+    $.post("http://localhost:8080/questions", {  "questionDesc" : "razraz" }  , function(result){
+        alert(result);
+    } );
+    $.get("http://localhost:8080/questions", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+
 
 
     $('#add').click(function () {
